@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface UserDao {
     List<User> getUsers();
-    User getUser(int id);
+    ResponseEntity<Object> getUser(int id);
     ResponseEntity<String> deleteUser(int id);
     void createUser(User user);
     void editUser(User user);

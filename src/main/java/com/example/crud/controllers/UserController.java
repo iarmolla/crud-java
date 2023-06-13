@@ -17,7 +17,7 @@ public class UserController {
         return userDao.getUsers();
     }
     @RequestMapping(value = "users/{id}", method = RequestMethod.GET)
-    public User getUser(@PathVariable int id) {
+    public ResponseEntity<Object> getUser(@PathVariable int id) {
         return userDao.getUser(id);
     }
     @RequestMapping(value = "users/{id}", method = RequestMethod.DELETE)

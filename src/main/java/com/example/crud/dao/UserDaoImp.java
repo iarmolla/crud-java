@@ -60,8 +60,13 @@ public class UserDaoImp implements UserDao{
     }
 
     @Override
-    public User getUser(int id) {
-        return entityManager.find(User.class, id);
+    public ResponseEntity<Object> getUser(int id) {
+        User user =  entityManager.find(User.class, id);
+        if(user != null) {
+            return ResponseEntity.status(HttpStatus.OK).body(user);
+        }
+        String errorMessage = "User not exists";
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorMessage);
     }
     @Override
     public List<User> getUsers() {
