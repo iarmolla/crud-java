@@ -6,11 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
-@Repository
-@Transactional
 @Entity
 @Table(name = "usuarios")
 public class User {
